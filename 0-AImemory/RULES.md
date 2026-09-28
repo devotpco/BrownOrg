@@ -55,6 +55,12 @@
 ```
 BrownOrg/
   .gitignore                also on branch master (§5.8)
+  .claude/
+    agents/
+      effort-low.md
+      effort-medium.md
+      effort-high.md
+      effort-xhigh.md
   main.py                   not recorded in git (§3.5)
   Objective.md
   README.md                 also on branch master (§5.8)
@@ -107,6 +113,8 @@ BrownOrg/
 
 **3.5** `main.py`, at the root, is the sample script PyCharm creates for a new project. It is not application code. `.gitignore` keeps it out of git. It is a file the editor made, like `.idea/`. The orchestrator ruled on 2026-09-28 that it is not a team file and has no owner.
 
+**3.6** `.claude/agents/` holds four agent definition files: `effort-low.md`, `effort-medium.md`, `effort-high.md`, and `effort-xhigh.md`. Each file sets only reasoning effort and a `maxTurns` guard of 50. The orchestrator chooses the model on each dispatch. Claude Code loads these definitions when a session starts. The Library note `Method/Agent_Optimization.md` states the approach.
+
 ## 4. Who owns which file
 
 **4.1** `Method/Cross_Functional_Team.md` states the one-owner rule under "Rules the team holds". It lists the team's members and their roles under "The team", and this project uses those names. The table names the owner of each file the team keeps.
@@ -122,6 +130,7 @@ BrownOrg/
 | `README.md`, at the root | The repository's front page, also on branch `master` (§5.8) | Tess |
 | `0-AImemory/README.md`, `1-Design/README.md`, `2-APP/README.md`, `2-APP/Data/README.md`, `2-APP/Boundary/README.md`, `2-APP/Business/README.md`, `8-History/README.md`, `9-Backlog/README.md` | The eight READMEs | Tess |
 | `.gitignore` | The list of paths git does not record | Tess |
+| `.claude/agents/effort-low.md`, `.claude/agents/effort-medium.md`, `.claude/agents/effort-high.md`, `.claude/agents/effort-xhigh.md` | Agent definition files that set reasoning effort | Tess |
 | The nine `.gitkeep` files shown in §3.1 | Markers that keep empty folders in git | Tess |
 
 **4.2** The orchestrator ruled on 2026-09-28 that Tess owns `.gitignore` and the `.gitkeep` files, as part of the folder map.
@@ -142,7 +151,7 @@ BrownOrg/
 
 **5.5** P-4 governs the project's remote repository.
 
-**5.8** The Steward ruled on 2026-09-28 that branch `master` holds only the root `README.md` and `.gitignore`, and that all other work is on branch `dev_claude`.
+**5.8** The Steward ruled on 2026-09-28 that the project's branches follow the standard practice of continuous integration and continuous delivery (CI/CD). Work is done on branch `dev_claude`. Work reaches branch `master` only by promotion: it moves forward from one branch to the next, through intermediate branches such as a quality assurance (QA) branch and a staging branch, where work gets a last check before `master`. Those intermediate branches are not set up yet, and their names are not fixed. No one commits to `master` directly. Until the first promotion, `master` holds only the root `README.md` and `.gitignore`.
 
 **5.6** The two bookends are the checks the team runs at the start and at the end of each working day. They run from the checklists in `0-AImemory/HANDOFF.md` §5 and §6.
 
