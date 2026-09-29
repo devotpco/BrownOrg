@@ -50,7 +50,7 @@
 
 ## 3. Folder map
 
-**3.1** The folder tree follows `Method/Folder_Structure.md`. Each folder's README says what the folder is for. The tree below shows every folder, every file the team keeps, and `main.py` (§3.5).
+**3.1** The folder tree follows `Method/Folder_Structure.md`. Each folder's README says what the folder is for. The tree below shows every folder and every file the team keeps, `main.py` (§3.5) among them.
 
 ```
 BrownOrg/
@@ -61,7 +61,6 @@ BrownOrg/
       effort-medium.md
       effort-high.md
       effort-xhigh.md
-  main.py                   not recorded in git (§3.5)
   Objective.md
   README.md                 also on branch master (§5.8)
   0-AImemory/
@@ -69,14 +68,23 @@ BrownOrg/
     RULES.md
     HANDOFF.md
     BINDER.md
+    Dispatch_Log.md
   1-Design/
     README.md
     Draft/
       .gitkeep
     Locked/
       .gitkeep
+      v0_UX.md
+      v0_Business.md
+      v0_Boundary.md
+      v0_Data_Model.md
+      v0_Data_Access.md
+      v0_Deployment.md
+      v0_Requirements.md
   2-APP/
     README.md
+    main.py                 the Worker's entry file (§3.5)
     Data/
       README.md
     Boundary/
@@ -101,6 +109,9 @@ BrownOrg/
       Parking_Lot.md
     V1/
       .gitkeep
+      Use_Case_Descriptions.md
+      Preferred_Stack_After_v0.md
+      Config_Step.md
     V2/
       .gitkeep
 ```
@@ -109,9 +120,9 @@ BrownOrg/
 
 **3.3** Git does not record an empty folder. Each empty sub-folder therefore holds an empty file named `.gitkeep`, so that the folder exists in every copy of the repository. The tree in §3.1 shows all nine. A `.gitkeep` is not a README. The orchestrator ruled on 2026-09-28 that a `.gitkeep` stays until its folder holds another file that git records. Tess may then remove it.
 
-**3.4** `.gitignore`, at the root, lists the paths git does not record: `.idea/`, the folder where PyCharm keeps its settings, and `/main.py`. It was copied from the Library's own `.gitignore`.
+**3.4** `.gitignore`, at the root, lists the paths git does not record: `.idea/`, the folder where PyCharm keeps its settings; and `/2-APP/config/`, the folder that holds the app's configuration file, which may contain secrets. It was copied from the Library's own `.gitignore`.
 
-**3.5** `main.py`, at the root, is the sample script PyCharm creates for a new project. It is not application code. `.gitignore` keeps it out of git. It is a file the editor made, like `.idea/`. The orchestrator ruled on 2026-09-28 that it is not a team file and has no owner.
+**3.5** `2-APP/main.py`, in the app root, is the entry file of the Cloudflare Worker in v0. It only wires the endpoints together. Its PyCharm sample content is replaced during the build. Git records it. Bruno, the backend engineer, owns it, since it wires the boundary layer. The Steward ruled on 2026-09-29 that it belongs in the app root, not the project root. This replaces the ruling of 2026-09-28 that it had no owner.
 
 **3.6** `.claude/agents/` holds four agent definition files: `effort-low.md`, `effort-medium.md`, `effort-high.md`, and `effort-xhigh.md`. Each file sets only reasoning effort and a `maxTurns` guard of 50. The orchestrator chooses the model on each dispatch. Claude Code loads these definitions when a session starts. The Library note `Method/Agent_Optimization.md` states the approach.
 
@@ -127,17 +138,51 @@ BrownOrg/
 | Each item file in `9-Backlog/V1/`, `9-Backlog/V2/` and any later version folder (none yet) | The backlog | Paula |
 | `0-AImemory/RULES.md` | The rules file | Tess, tech writer |
 | `0-AImemory/HANDOFF.md` | The resume file | Tess |
+| `0-AImemory/Dispatch_Log.md` | The dispatch log: one line per agent dispatch, with setup, estimate, actual and outcome | Tess |
 | `README.md`, at the root | The repository's front page, also on branch `master` (§5.8) | Tess |
 | `0-AImemory/README.md`, `1-Design/README.md`, `2-APP/README.md`, `2-APP/Data/README.md`, `2-APP/Boundary/README.md`, `2-APP/Business/README.md`, `8-History/README.md`, `9-Backlog/README.md` | The eight READMEs | Tess |
 | `.gitignore` | The list of paths git does not record | Tess |
 | `.claude/agents/effort-low.md`, `.claude/agents/effort-medium.md`, `.claude/agents/effort-high.md`, `.claude/agents/effort-xhigh.md` | Agent definition files that set reasoning effort | Tess |
 | The nine `.gitkeep` files shown in §3.1 | Markers that keep empty folders in git | Tess |
+| `2-APP/main.py` | The Cloudflare Worker's entry file (§3.5) | Bruno, backend engineer |
+| `1-Design/Locked/v0_UX.md` | The v0 UX design | Uma, UX designer |
+| `1-Design/Locked/v0_Business.md` | The v0 business-logic design | Lena, business-logic engineer |
+| `1-Design/Locked/v0_Boundary.md` | The v0 boundary design | Bruno |
+| `1-Design/Locked/v0_Data_Model.md` | The v0 data model | Marta, data modeler |
+| `1-Design/Locked/v0_Data_Access.md` | The v0 data-access design | Ingrid, schema architect |
+| `1-Design/Locked/v0_Deployment.md` | The v0 deployment design | Deacon, deployment engineer |
+| `1-Design/Locked/v0_Requirements.md` | The v0 requirements | Quill, QA |
+| `9-Backlog/V1/Use_Case_Descriptions.md`, `9-Backlog/V1/Preferred_Stack_After_v0.md`, `9-Backlog/V1/Config_Step.md` | V1 backlog items | Paula |
 
 **4.2** The orchestrator ruled on 2026-09-28 that Tess owns `.gitignore` and the `.gitkeep` files, as part of the folder map.
 
 **4.3** A file the team creates later gets a row in the table when it is created.
 
 **4.4** `Method/Cross_Functional_Team.md`, under "Roles", states what the Steward and the orchestrator may write.
+
+**4.5** The full team roster and coverage areas follow. `Method/Cross_Functional_Team.md` under "The team" states each role.
+
+| Member | Role | Owns in this project |
+|---|---|---|
+| Paula | Project manager | `Objective.md`, `0-AImemory/BINDER.md`, `9-Backlog/Parking_Lot/Parking_Lot.md`, and each backlog item file, among them `Use_Case_Descriptions.md`, `Preferred_Stack_After_v0.md` and `Config_Step.md` in `9-Backlog/V1/` |
+| Tess | Tech writer | `0-AImemory/RULES.md`, `0-AImemory/HANDOFF.md`, `0-AImemory/Dispatch_Log.md`, every README, `.gitignore`, the agent definition files in `.claude/agents/`, and the `.gitkeep` files (§4.1) |
+| Quill | QA | `1-Design/Locked/v0_Requirements.md` |
+| Ingrid | Schema architect | `1-Design/Locked/v0_Data_Access.md` |
+| Hal | Vocabulary designer | No file yet |
+| Marta | Data modeler | `1-Design/Locked/v0_Data_Model.md` |
+| Bruno | Backend engineer | `2-APP/main.py` (§3.5) and `1-Design/Locked/v0_Boundary.md` |
+| Lena | Business-logic engineer | `1-Design/Locked/v0_Business.md` |
+| Finn | Frontend developer | No file yet |
+| Uma | UX designer | `1-Design/Locked/v0_UX.md` |
+| Deacon | Deployment engineer | `1-Design/Locked/v0_Deployment.md` |
+| Cyrus | Cloud engineer | No file yet |
+| Reed | Janitor | Owns nothing |
+| Mara | Archivist | No file yet |
+| Rhea | Analyst | No file yet |
+| Ada | Auditor | Owns nothing |
+| Sam | Scout | Owns nothing |
+| Nell | Cold reader | Owns nothing |
+| Hollis | Housekeeper | Owns nothing |
 
 ## 5. How the team works on this project
 

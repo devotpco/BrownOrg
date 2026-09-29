@@ -56,10 +56,76 @@
 
 **Date.** 2026-09-28.
 
-**Policy.** The project keeps the history of its files in Git, a version-control program. Git records each saved set of changes as a commit. A remote repository is a copy of that history kept on another computer. To push is to send commits to the remote repository. The project's remote repository will be on GitHub, a service that hosts Git repositories. As of 2026-09-28, no remote repository exists and nothing has been pushed. No AI on the project creates the remote repository or pushes to it without the Steward's go, because each is an action under P-1.
+**Policy.** The project keeps the history of its files in Git, a version-control program. Git records each saved set of changes as a commit. A remote repository is a copy of that history kept on another computer. To push is to send commits to the remote repository. The project's remote repository is on GitHub, a service that hosts Git repositories. As of 2026-09-28, the remote repository exists at git@github.com:devotpco/BrownOrg.git, named `origin`. The orchestrator added it and pushed the branches `master` and `dev_claude` to it on the Steward's go, on 2026-09-28. No AI on the project creates a remote repository or pushes to it without the Steward's go, because each is an action under P-1. The evening bookend carries the Steward's permission for its push; at the evening wrap-up, the orchestrator pushes `dev_claude` to `origin` without a separate go. Every other push needs the Steward's go under P-1. The GitHub repository `devotpco/BrownOrg` is private.
 
 **Origin.** The Steward, in conversation, 2026-09-28. The Steward wrote GH for GitHub:
 
 > Project will go to GH, not yet?
 
+The Steward, 2026-09-28, on whether the repository is public or private:
+
+> private
+
+The Steward, 2026-09-28:
+
+> evening bookend does include a push permission
+
 **Applies to.** The project's Git history and any remote copy of it.
+
+## P-5 — v0 scope: keep it simple
+
+**Date.** 2026-09-29.
+
+**Policy.** Version 0 (v0) builds only two things: an expense intake form and one table that saves the entries. The team designs nothing for later versions in v0. Enterprise features, real accounting and bank sync are all left out of v0. No AI on the project bakes any of them into v0.
+
+**Origin.** The Steward, 2026-09-29:
+
+> on all your points, K.I.S.S: keep it simple, Don't fuss over getting all the fields right or doing the accounting right, etc. The only real feature we are building is a SIMPLE intake table for expenses and a table to save the entries in. After v0, everything will change to make it enterprise-grade, real accounting, bank sync, etc, etc. If your team tries to bake any of that in for v0, we will have a problem. That's boiling v0!
+
+**Applies to.** Every v0 design and build task, for every AI on the project.
+
+## P-6 — v0 security
+
+**Date.** 2026-09-29.
+
+**Policy.** The only security in v0 is the login page, which is the home page. The login page checks one shared password that is fixed in the code. v0 has no sessions, no signed-in checks and no sign-out. The endpoints are unprotected. The password's value appears in no document, and no AI on the project writes it into one.
+
+**Origin.** The Steward, 2026-09-29:
+
+> login: nowhere in v0. The only security is a single login page that is the home page. If I get past that, I am in and testing
+
+The Steward, 2026-09-28:
+
+> In the code is fine for now. We will add security, members, roles and permissions, OAuth later
+
+**Applies to.** The v0 login page, the v0 endpoints, and every project document (none may state the password).
+
+## P-7 — v0 environments and deployment
+
+**Date.** 2026-09-29.
+
+**Policy.** DEV is any developer machine; the Steward has two. PROD is Cloudflare. v0 has no QA server. v0 uses one Worker and one D1 database, both named `brownorg`. Access to Cloudflare is by `wrangler login`; v0 uses no API key. Deploys are by hand from the branch `dev_claude`, and only on the Steward's go under P-1.
+
+**Origin.** The Steward, 2026-09-29:
+
+> DROP Local from the YAML; DEV is the developer machine setup, any dev machine. I have 2. PROD is the CF host. For v0, no QA server
+
+The Steward, 2026-09-28:
+
+> For v0 we will deploy on dev_claude and test on dev_claude for the live site testing
+
+**Applies to.** v0 environments, deploys and Cloudflare access.
+
+## P-8 — Stack choices
+
+**Date.** 2026-09-28.
+
+**Policy.** The stack adapts to what Cloudflare allows. The front end is Vue with PrimeVue, so that the Steward can understand the user interface.
+
+**Origin.** The Steward, 2026-09-28:
+
+> We adapt our stack to what cloudflare allows.
+
+> I have a preference for using Vue (eg PrimeVue) just because I am not a front-end engineer and, I want to be able to understand the UXI, if I ask about it. React goes over my head
+
+**Applies to.** Every choice of language, framework or library on the project.
