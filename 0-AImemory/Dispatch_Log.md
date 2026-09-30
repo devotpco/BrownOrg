@@ -68,6 +68,29 @@ Each line records one agent dispatch: its setup, the estimate, the actual and th
 | 60 | 2026-09-29 | Mara | grounded findings into the Library, new Tooling note | Sonnet | medium | — / 14 | 0.8 min / 13 | 52,350 | 1 | ok; flagged a leftover cost claim
 | 61 | 2026-09-29 | Mara | one parenthetical (resumed within the 5-minute cache window) | Sonnet | medium | — / 2 | under 0.1 min / 1 | about 324 more | 0 | ok; a prompt resume cost almost nothing
 | 62 | 2026-09-29 | Otto | research five hypotheses (redo, experiment) | Opus 5.5 | high | 5 min / 25 | 2.6 min / 20 | 89,100 | 0 | near tie with row 59 (Fable) at half the price; missed the fork-cache fact; no overreach
+| 63 | 2026-09-29 | Mara | dispatch-log template and pooled-data folder in the Library | Sonnet | medium | — / 10 | 0.3 min / 9 | 40,700 | 0 | ok |
+| 64 | 2026-09-29 | Otto | pool rows 1–62 into the Library, anonymized | Sonnet | medium | — / 6 | 0.7 min / 4 | 44,600 | 0 | ok; no leaks found in the COB's check |
+| 65 | 2026-09-29 | Otto | log rows 56–58 | Haiku | low (ignored) | — / 2 | 0.3 min / 2 | 31,600 | 0 | ok |
+| 66 | 2026-09-29 | Otto | log row 59 | Haiku | low (ignored) | — / 3 | 0.4 min / 2 | 32,000 | 0 | ok |
+| 67 | 2026-09-29 | Otto | log rows 60–62 | Haiku | low (ignored) | — / 2 | 0.3 min / 2 | 31,900 | 0 | ok |
+| 68 | 2026-09-29 | Otto | log rows 63–64 | Haiku | low (ignored) | — / 2 | 1.1 min / 10 | 40,100 | 0 | reported 2 calls; the completion notice showed 10 |
+| 69 | 2026-09-29 | Mara | Style note on note structure | Sonnet | medium | — / 6 | 0.3 min / 3 | 35,900 | 0 | ok |
+| 70 | 2026-09-29 | Mara | split a large note into hub and parts | Opus 5.5 | high | — / 15 | 2.2 min / 10 | 59,200 | 0 | ok; made a sound structural call of its own (an extra part to stay under the size limit) |
+| 71 | 2026-09-29 | Mara | agent-file template part | Sonnet | medium | — / 8 | 0.3 min / 5 | 41,000 | 0 | ok |
+| 72 | 2026-09-29 | Mara | fix pointers, add a rule, update READMEs | Sonnet | medium | — / 12 | 0.9 min / 19 | 45,200 | 1 | over budget; stopped cleanly and was resumed |
+| 73 | 2026-09-29 | Mara | frontmatter on five notes | Sonnet | medium | — / 12 | 0.3 min / 12 | 43,300 | 0 | ok, at budget |
+| 74 | 2026-09-29 | Mara | frontmatter on ten notes | Sonnet | medium | — / 22 | 0.6 min / 22 | 59,500 | 0 | ok, at budget |
+| 75 | 2026-09-29 | Mara | remove one passage | Sonnet | low | — / 2 | 0.1 min / 2 | 31,600 | 0 | ok |
+| 76 | 2026-09-29 | Mara | path updates in eleven files | Sonnet | low | — / 24 | 0.7 min / 25 | 57,800 | 1 | one call short; resumed |
+| 77 | 2026-09-29 | Mara | Style rule for part subfolders | Sonnet | medium | — / 4 | 0.2 min / 3 | 33,200 | 0 | ok |
+| 78 | 2026-09-29 | Tess | conform project notes to the Library | Sonnet | medium | — / 15 | 0.8 min / 23 | 43,400 | 1 | reported 3 calls; the notice showed 22; used a letter suffix in numbering, fixed |
+| 79 | 2026-09-29 | Hollis | verify pointers, Library and project | Sonnet | low | — / 12 | 1.1 min / 3 | 43,300 | 0 | ok |
+| 80 | 2026-09-29 | Mara | fold past-history part into current parts | Sonnet | medium | — / 12 | 0.4 min / 15 | 41,300 | 0 | two over budget, fixing counts the COB missed |
+| 81 | 2026-09-29 | Tess | retire one block, repoint another | Sonnet | low | — / 4 | 0.1 min / 3 | 37,500 | 0 | ok |
+| 82 | 2026-09-29 | Mara | four complete agent files | Sonnet | low | — / 3 | 0.4 min / 3 | 33,200 | 0 | ok |
+| 83 | 2026-09-29 | Mara | Startup note, README pointer, Style fix | Sonnet | medium | — / 10 | 0.5 min / 11 | 38,400 | 1 | added a rule the Steward never stated; removed in first review |
+| 84 | 2026-09-29 | Mara | rewrite a Startup step list, then reorder the steps | Opus 5.5 | medium | — / 3 | 0.3 min / 2, then two resumes of 1 | 36,800 | 0 | clearer than the COB's own drafts; the brief carried substance only |
+| 85 | 2026-09-30 | COB | conversation sweep at the bookend | Opus 5.5 | xhigh | — | not recorded | not recorded | 0 | first sweep by the COB instead of a fork |
 
 From row 40, tokens come from each agent's completion notice; for a resumed agent the notice gives a running total, so its own share is "not recorded".
 Haiku 4.5 does not support the effort setting, so every row with model Haiku ran at Haiku's default whatever its effort column says (documented 2026-09-29).
@@ -91,3 +114,11 @@ Haiku 4.5 does not support the effort setting, so every row with model Haiku ran
 **9. Resume budgets.** When an agent is resumed, it must read a file again before editing it, so a resume budget needs one read per file; and the COB's budgets for many-file edits keep coming out one or two calls short.
 
 **6. Planned comparisons.** Haiku at medium against Sonnet at low on a small judgment task; Opus at low against Sonnet at medium on a cold read.
+
+**10. Brief the substance.** A brief that carries the substance, the rulings and the standard gets better writing than a brief carrying the COB's prose (row 84).
+
+**11. Model for prose.** Writing that a stranger will read gets at least Sonnet at medium effort; closely read wording gets Opus at medium effort; low effort or Haiku never writes prose.
+
+**12. Self-reported counts.** Agents' self-reported tool counts can be wrong (rows 68, 78): take counts from the completion notices.
+
+**13. Many-file budgets.** Budgets for edits across many files still run short (rows 72, 76, 80): budget one call per edit plus reads.

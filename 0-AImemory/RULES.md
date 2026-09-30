@@ -10,20 +10,21 @@
 
 **1.1** The project root is the folder `/Users/jerry/DEV/PyCharm/BrownOrg`. A path in this file that does not begin with `/`, `Method/` or `Style/` is relative to the project root.
 
-**1.2** The Library is the folder `/Users/jerry/DEV/DEVLibrary/`. It holds notes on rules and formats that any project may use. A path in this file that begins with `Method/` or `Style/` is relative to the Library. `Method/Cross_Functional_Team.md`, under "Rules the team holds", states which way pointers between a project and the Library may run.
+**1.2** The Library is the folder `/Users/jerry/DEV/DEVLibrary/`. It holds notes on rules and formats that any project may use. A path in this file that begins with `Method/` or `Style/` is relative to the Library. `Method/Cross_Functional_Team/Rules.md` states which way pointers between a project and the Library may run.
 
-**1.3** This project follows four Library notes:
+**1.3** This project follows five Library notes:
 
-- **1.4** `Method/Cross_Functional_Team.md`: the team's roles, the files every project keeps, how work moves, and the two daily checks called bookends.
+- **1.4** `Method/Cross_Functional_Team.md`, a hub with its parts in `Method/Cross_Functional_Team/`: the team's roles, the files every project keeps, how work moves, and the two daily checks called bookends.
 - **1.5** `Method/Folder_Structure.md`: the folder layout, and the rules for READMEs.
 - **1.6** `Style/Man_from_Mars_Writing_Style.md`: the writing standard.
 - **1.7** `Style/Outline_Numbering.md`: how each block of a project document is numbered and cited.
+- **1.15** `Style/Library_Note_Structure.md`: how notes are split and linked.
 
-**1.8** `Method/Committee_Meeting_Format.md` describes an older team format. `Method/Cross_Functional_Team.md` replaced it, and this project does not use it.
+**1.8** Retired 2026-09-29.
 
 **1.9** The policy binder is `0-AImemory/BINDER.md`. Its entries are numbered P-1, P-2, P-3 and onward. This file cites an entry by its number alone, as `Style/Outline_Numbering.md` §5.2 allows.
 
-**1.10** `Method/Cross_Functional_Team.md` defines these terms under "Terms": the Steward, the COB (Chief of the Boat), an agent, a fresh agent, an owner, the rules file, the resume file, the policy binder, the backlog and the parking lot. In a few words: the Steward is the human, who holds every decision. An agent is an artificial-intelligence (AI) program given one named task. The COB is the AI in conversation with the Steward; it dispatches the agents. A fresh agent starts with only its directive. An owner is the one agent that may change a given file.
+**1.10** `Method/Cross_Functional_Team/Terms.md` defines these terms: the Steward, the COB (Chief of the Boat), an agent, a fresh agent, an owner, the rules file, the resume file, the policy binder, the backlog and the parking lot. In a few words: the Steward is the human, who holds every decision. An agent is an artificial-intelligence (AI) program given one named task. The COB is the AI in conversation with the Steward; it dispatches the agents. A fresh agent starts with only its directive. An owner is the one agent that may change a given file.
 
 **1.11** `Style/Outline_Numbering.md` defines a block, a specification and a home document, in its §0.3 to §0.5.
 
@@ -42,11 +43,11 @@
 - **2.4** `0-AImemory/BINDER.md`, the policy binder.
 - **2.5** `Objective.md`, the objective statement.
 - **2.6** `9-Backlog/Parking_Lot/Parking_Lot.md`, the parking lot.
-- **2.7** `Method/Cross_Functional_Team.md` and `Method/Folder_Structure.md`, the two Method notes in §1.4 and §1.5.
+- **2.7** The hub `Method/Cross_Functional_Team.md` and its parts `Terms.md`, `Roles.md`, `Rules.md` and `Bookends.md` in `Method/Cross_Functional_Team/`; `Method/Agent_Optimization.md` with its part `Method/Agent_Optimization/Claude_Agents.md`; and `Method/Folder_Structure.md`. The COB reads the other parts of the hub, and the Style notes in §1.6, §1.7 and §1.15, when a task needs them.
 
-**2.8** A fresh agent does not follow this list. It reads only what its directive names, as `Method/Cross_Functional_Team.md` states under "Terms".
+**2.8** A fresh agent does not follow this list. It reads only what its directive names, as `Method/Cross_Functional_Team/Terms.md` states.
 
-**2.9** The two Style notes in §1.6 and §1.7 are read by an agent whose task writes or edits a document. That agent's directive names them. This narrower reading follows the no-ocean-boiling rule, which sizes work to the question, in `Method/Cross_Functional_Team.md` under "Rules the team holds".
+**2.9** The Style notes in §1.6, §1.7 and §1.15 are read by an agent whose task writes or edits a document. That agent's directive names them. This narrower reading follows the no-ocean-boiling rule, which sizes work to the question, in `Method/Cross_Functional_Team/Rules.md`.
 
 ## 3. Folder map
 
@@ -124,11 +125,11 @@ BrownOrg/
 
 **3.5** `2-APP/main.py`, in the app root, is the entry file of the Cloudflare Worker in v0. It only wires the endpoints together. Its PyCharm sample content is replaced during the build. Git records it. Bruno, the backend engineer, owns it, since it wires the boundary layer. The Steward ruled on 2026-09-29 that it belongs in the app root, not the project root. This replaces the ruling of 2026-09-28 that it had no owner.
 
-**3.6** `.claude/agents/` holds four agent definition files: `effort-low.md`, `effort-medium.md`, `effort-high.md`, and `effort-xhigh.md`. Each file sets only reasoning effort and a `maxTurns` guard of 50. The COB chooses the model on each dispatch. Claude Code loads these definitions when a session starts. The Library note `Method/Agent_Optimization.md` states the approach.
+**3.6** `.claude/agents/` holds four agent definition files: `effort-low.md`, `effort-medium.md`, `effort-high.md`, and `effort-xhigh.md`. Each file sets only reasoning effort and a `maxTurns` guard of 50. The COB chooses the model on each dispatch. Claude Code loads these definitions when a session starts. The Library note `Method/Agent_Optimization.md` states the approach, and its part `Method/Agent_Optimization/Claude_Agents.md` holds the definition file template.
 
 ## 4. Who owns which file
 
-**4.1** `Method/Cross_Functional_Team.md` states the one-owner rule under "Rules the team holds". It lists the team's members and their roles under "The team", and this project uses those names. The table names the owner of each file the team keeps.
+**4.1** `Method/Cross_Functional_Team/Rules.md` states the one-owner rule. `Method/Cross_Functional_Team/Roster.md` lists the team's members and their roles, and this project uses those names. The table names the owner of each file the team keeps.
 
 | File | What it is | Owner |
 |---|---|---|
@@ -158,9 +159,9 @@ BrownOrg/
 
 **4.3** A file the team creates later gets a row in the table when it is created.
 
-**4.4** `Method/Cross_Functional_Team.md`, under "Roles", states what the Steward and the COB may write.
+**4.4** `Method/Cross_Functional_Team/Roles.md` states what the Steward and the COB may write.
 
-**4.5** The full team roster and coverage areas follow. `Method/Cross_Functional_Team.md` under "The team" states each role.
+**4.5** The full team roster and coverage areas follow. `Method/Cross_Functional_Team/Roster.md` states each role.
 
 | Member | Role | Owns in this project |
 |---|---|---|
@@ -191,9 +192,9 @@ BrownOrg/
 
 **5.2** P-1, the go rule, governs every action outside `0-AImemory/`.
 
-**5.3** P-2 governs every action inside `0-AImemory/`. The COB ruled on 2026-09-28 that P-2 gives the AIs autonomy toward the Steward only: no go and no questions. Among the AIs, the rules in `Method/Cross_Functional_Team.md`, one owner per file among them, still hold inside `0-AImemory/`.
+**5.3** P-2 governs every action inside `0-AImemory/`. The COB ruled on 2026-09-28 that P-2 gives the AIs autonomy toward the Steward only: no go and no questions. Among the AIs, the rules in `Method/Cross_Functional_Team/Rules.md`, one owner per file among them, still hold inside `0-AImemory/`.
 
-**5.4** The COB runs the project's git commands and makes its commits, as its role under "The COB" in `Method/Cross_Functional_Team.md` states.
+**5.4** The COB runs the project's git commands and makes its commits, as its role in `Method/Cross_Functional_Team/Roles.md` states.
 
 **5.5** P-4 governs the project's remote repository.
 
@@ -201,11 +202,11 @@ BrownOrg/
 
 **5.6** The two bookends are the checks the team runs at the start and at the end of each working day. They run from the checklists in `0-AImemory/HANDOFF.md` §5 and §6.
 
-**5.7** The test runner is the program that runs the project's tests. The rule that ties each commit to its result is in `Method/Cross_Functional_Team.md`, under "Files the team keeps". `0-AImemory/HANDOFF.md` §1 records whether a test runner exists yet.
+**5.7** The test runner is the program that runs the project's tests. The rule that ties each commit to its result is in `Method/Cross_Functional_Team/Work.md`. `0-AImemory/HANDOFF.md` §1 records whether a test runner exists yet.
 
 ## 6. Where project substance may live
 
-**6.1** Project substance is content specific to this project. `Method/Cross_Functional_Team.md`, under "Rules the team holds", states where it may be written. `Method/Folder_Structure.md`, under the entry for `0-AImemory`, states the folder that serves that rule.
+**6.1** Project substance is content specific to this project. `Method/Cross_Functional_Team/Rules.md` states where it may be written. `Method/Folder_Structure.md`, under the entry for `0-AImemory`, states the folder that serves that rule.
 
 **6.2** In this project, the project's own tree is the project root (§1.1) and everything under it.
 
@@ -213,7 +214,7 @@ BrownOrg/
 
 ## 7. Writing standard
 
-**7.1** The writing standard for every lasting document is `Style/Man_from_Mars_Writing_Style.md`, as `Method/Cross_Functional_Team.md` states under "What was kept from the committee format". Its major standard is the stranger test. Its minor standard is Katra voice, its rules for sentences.
+**7.1** The writing standard for every lasting document is `Style/Man_from_Mars_Writing_Style.md`, as `Method/Cross_Functional_Team/Rules.md` states. Its major standard is the stranger test. Its minor standard is Katra voice, its rules for sentences.
 
 **7.2** Every project document is numbered and cited as `Style/Outline_Numbering.md` states. P-3 records this project's choices under that note's §1.2.
 

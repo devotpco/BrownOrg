@@ -14,21 +14,21 @@
 
 ## 1. State (rewritten at every update)
 
-**1.1** This update was written on 2026-09-29.
+**1.1** This update was written on 2026-09-30.
 
-**1.2** `Objective.md` is written. The Steward approved the v0 design on 2026-09-29. It is six drafts (`v0_UX.md`, `v0_Business.md`, `v0_Boundary.md`, `v0_Data_Model.md`, `v0_Data_Access.md`, `v0_Deployment.md`) and `v0_Requirements.md` (R-1 to R-9, plus two build checks). All seven are locked in `1-Design/Locked/`. Only the Steward approves an edit to them.
+**1.2** The v0 design and requirements are locked in `1-Design/Locked/`: six design drafts and `v0_Requirements.md` (R-1 to R-9, plus two build checks). The binder entries P-5 to P-7 hold the v0 decisions. Only the Steward approves an edit to a locked file. `Objective.md` is written.
 
-**1.3** The folder tree set out in `Method/Folder_Structure.md` exists in full. `0-AImemory/RULES.md` §3 maps it.
+**1.3** No application code exists yet. `2-APP/main.py` is PyCharm's sample; it becomes the Worker's entry file. There is no test runner yet.
 
-**1.4** No application code exists yet. `2-APP/main.py` is PyCharm's sample; it becomes the Worker's entry file. Tools on the Steward's machine: `uv` is installed. Homebrew could not install Node.js on the Steward's Intel Mac, so Node.js v24.21.0 and npm 11.19.0 are installed inside the venv `~/DEV_ENV/BrownOrg` through `nodeenv`. They are available when that venv is active. Cloudflare: the Steward's personal account; `wrangler login` has not yet been run.
+**1.4** The remote on GitHub (P-4) holds `dev_claude`, the branch for continuing work. `master` holds only `README.md` and `.gitignore`.
 
-**1.5** Git records the project. The repository was initialized on 2026-09-28. The first commit, on branch `master`, holds `README.md` and `.gitignore`. The second commit, on branch `dev_claude`, holds the rest of the files written on 2026-09-28. Work continues on `dev_claude`. `master` holds only those two files.
+**1.5** The Steward's machine: `uv` is installed. Node.js v24 and npm are installed inside the venv `~/DEV_ENV/BrownOrg` through `nodeenv`, and are available when that venv is active. `wrangler login` has not yet been run.
 
-**1.6** The repository has a remote on GitHub: git@github.com:devotpco/BrownOrg.git, named `origin`. Both `master` and `dev_claude` are pushed to it and track it (P-4).
+**1.6** The agent definition files `.claude/agents/effort-{low,medium,high,xhigh}.md` exist. Otto, the agent optimizer, owns them.
 
-**1.7** There is no test runner yet.
+**1.7** The dispatch log holds rows 1 to 85. Otto owns it. This project's rows are pooled, anonymized, in the Library's LIBData.
 
-**1.8** The policy binder holds eight entries: P-1, the go rule; P-2, on the AIs' autonomy inside `0-AImemory/`; P-3, this project's outline-numbering choices; P-4, on the remote repository; and P-5 to P-8, which hold the v0 decisions.
+**1.8** The Library was restructured on 2026-09-29. Large notes are now hubs, with their parts in subfolders (`Method/Cross_Functional_Team/`, `Method/Agent_Optimization/`). Every note has frontmatter. `Method/Startup.md` is the qualification procedure a new COB follows. This project's notes point at the new parts (`0-AImemory/RULES.md`).
 
 ## 2. Change log
 
@@ -50,6 +50,8 @@
 
 **Log entry 8.** 2026-09-29. The v0 design was drafted, cut to the keep-it-simple scope (P-5) and approved. Requirements were written, merged to 9 and approved. `main.py` moved to `2-APP/main.py` as the Worker entry file, by the Steward's ruling. V1 backlog items were added (`Use_Case_Descriptions.md`, `Preferred_Stack_After_v0.md`, `Config_Step.md`). The dispatch log was started. The design bookend was held. The design was locked (seven files moved to `1-Design/Locked/`).
 
+**Log entry 9.** 2026-09-29/30. The role "orchestrator" was renamed "the COB" (Chief of the Boat). Otto, the agent optimizer, joined the team and owns the dispatch log and the agent definition files. The COB now does the conversation sweep itself, with no forks. The Library gained LIBData (pooled dispatch data), the dispatch-log template, the Startup note, and the note-structure Style note. It also gained rules that each session pushes its own commits, that the COB names risks before acting on a direct instruction, that the Library leads and each project conforms, and how writing is delegated. This project's notes were brought into line with the restructured Library.
+
 ## 3. Decisions pending (rewritten at every update)
 
 **3.1** None.
@@ -58,15 +60,16 @@
 
 **4.1** The steps run in this order:
 
-- **4.2** The Steward runs `npx wrangler login` with the venv active. It opens a browser sign-in.
-- **4.3** The build starts with the two build checks in `v0_Requirements.md`.
-- **4.4** Build to the design, with tests for R-1 to R-7.
-- **4.5** Deploy by hand from `dev_claude`, on the Steward's go.
-- **4.6** The Steward walks through R-8 and R-9 by hand.
+- **4.2** A new COB session first follows the Library's `Method/Startup.md` in full: read every Library note, then this project's rules file (`0-AImemory/RULES.md`) and its reading list. The agent definition files already exist, so no restart is needed for them.
+- **4.3** The Steward runs `npx wrangler login` with the venv active. It opens a browser sign-in.
+- **4.4** The build starts with the two build checks in `1-Design/Locked/v0_Requirements.md`.
+- **4.5** Build to the design, with tests for R-1 to R-7.
+- **4.6** Deploy by hand from `dev_claude`, on the Steward's go.
+- **4.7** The manual walk-through, R-8 and R-9.
 
 ## 5. Morning bookend
 
-**5.1** The COB runs this checklist at the start of each working day, before any work. It adapts the morning bookend in `Method/Cross_Functional_Team.md`, under "The two bookends", to this project: there is no test runner yet. P-1 and P-2 govern each step.
+**5.1** The COB runs this checklist at the start of each working day, before any work. It adapts the morning bookend in `Method/Cross_Functional_Team/Bookends.md`, to this project: there is no test runner yet. P-1 and P-2 govern each step.
 
 - **5.2** Confirm that the branch checked out is the branch for continuing work that §1 names.
 - **5.3** Fetch from `origin` and confirm that `dev_claude` is in sync with `origin/dev_claude`.
@@ -77,7 +80,7 @@
 
 ## 6. Evening bookend
 
-**6.1** The team runs this checklist at the end of each working day. It adapts the evening bookend in `Method/Cross_Functional_Team.md`, under "The two bookends", to the same facts as §5.1. P-1 and P-2 govern each step.
+**6.1** The team runs this checklist at the end of each working day. It adapts the evening bookend in `Method/Cross_Functional_Team/Bookends.md`, to the same facts as §5.1. P-1 and P-2 govern each step.
 
 - **6.2** Hollis, the housekeeper, runs the test runner. There is no test runner yet: note that, and go on.
 - **6.3** The COB lists every item that exists only in the conversation, and names an owner for each. No agent inherits the conversation; every agent is fresh.
@@ -86,6 +89,6 @@
 - **6.6** Hollis verifies that every pointer resolves. A pointer is a reference from one file to another file or to a numbered block. It resolves when its target exists.
 - **6.7** The COB commits on the branch for continuing work that §1 names, with the message "wrap-up" and the date. This is the wrap-up commit. The COB then pushes `dev_claude` to `origin`; the evening bookend carries the Steward's permission for this push (P-4).
 
-**6.8** Once a test runner exists, the rule that ties each commit to its result applies. It is in `Method/Cross_Functional_Team.md`, under "Files the team keeps".
+**6.8** Once a test runner exists, the rule that ties each commit to its result applies. It is in `Method/Cross_Functional_Team/Work.md`.
 
 **6.9** The COB also makes the sweep of §6.3 at the end of each stage of work, and before any restart of its session. The Steward ruled this on 2026-09-29.
