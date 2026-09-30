@@ -2,7 +2,7 @@
 
 **0.1** This file is the policy binder of the project BrownOrg. The binder is the numbered record of the policies and decisions in force on the project. A policy that is not in the binder is not in force. The project manager keeps the binder. The Library note `Method/Cross_Functional_Team.md` defines the binder and the project manager's role. The Library is the folder `/Users/jerry/DEV/DEVLibrary/`, which holds rules and formats that any project may reuse.
 
-**0.2** The Steward is the human who holds the decision on the project. AI stands for artificial intelligence. An AI on the project is any AI program that does work on the project. The orchestrator is the AI in conversation with the Steward. An agent is an AI that the orchestrator starts for one named task. `Method/Cross_Functional_Team.md` defines the Steward, the orchestrator and the agents.
+**0.2** The Steward is the human who holds the decision on the project. AI stands for artificial intelligence. An AI on the project is any AI program that does work on the project. The COB is the AI in conversation with the Steward. An agent is an AI that the COB starts for one named task. `Method/Cross_Functional_Team.md` defines the Steward, the COB and the agents.
 
 **0.3** Each entry carries its own number: P-1, P-2, and so on. A number is never reused. An entry is never deleted. An entry that is no longer in force is marked retired, with the date.
 
@@ -14,7 +14,7 @@
 
 **Date.** 2026-09-28.
 
-**Policy.** Outside the folder `0-AImemory/`, no AI on the project takes any action without an explicit go from the Steward. A go is the Steward's explicit word to go ahead with a step. An action is any tool call. A tool call is any step in which an AI does something beyond writing its reply in the conversation. Examples are a file edit, a shell command (a command run on the computer), a search, a memory write (a note saved to an AI's own memory) and an agent launch (the start of another AI). A question from the Steward gets a text-only answer: the AI answers in words and makes no tool call. An AI does not search for what the Steward or that AI likely already knows. The orchestrator reviews every question before it goes to the Steward, whether the orchestrator or an agent raised it. The orchestrator answers the question where it can and states the answer, so the Steward can veto it. Only a question that stays unresolved goes to the Steward. A request from the Steward that begins "Can you…" or "help me…" asks the AI for a proposal and gives no go. A direct instruction from the Steward, such as "read these files" or "rename it", is its own go. The AI states what it will do, then waits for the Steward's go. A go covers one step only. P-2 states the one exception to this rule.
+**Policy.** Outside the folder `0-AImemory/`, no AI on the project takes any action without an explicit go from the Steward. A go is the Steward's explicit word to go ahead with a step. An action is any tool call. A tool call is any step in which an AI does something beyond writing its reply in the conversation. Examples are a file edit, a shell command (a command run on the computer), a search, a memory write (a note saved to an AI's own memory) and an agent launch (the start of another AI). A question from the Steward gets a text-only answer: the AI answers in words and makes no tool call. An AI does not search for what the Steward or that AI likely already knows. The COB reviews every question before it goes to the Steward, whether the COB or an agent raised it. The COB answers the question where it can and states the answer, so the Steward can veto it. Only a question that stays unresolved goes to the Steward. A request from the Steward that begins "Can you…" or "help me…" asks the AI for a proposal and gives no go. A direct instruction from the Steward, such as "read these files" or "rename it", is its own go. The AI states what it will do, then waits for the Steward's go. A go covers one step only. P-2 states the one exception to this rule.
 
 **Origin.** The Steward's standing instructions to the AI, which hold in every session, as they read on 2026-09-28. The source, word for word:
 
@@ -48,7 +48,7 @@
   - `0-AImemory/HANDOFF.md`: the project's state, its change log, and its next steps.
 - Items that already carry their own numbers, and so get no outline number: the entries in this binder (P-1, P-2, and so on), the questions in the parking lot (question 1, question 2, and so on), and the log entries in the change log of `0-AImemory/HANDOFF.md`.
 
-**Origin.** The orchestrator set the three choices on 2026-09-28, as `Style/Outline_Numbering.md` §1.2 requires.
+**Origin.** The COB set the three choices on 2026-09-28, as `Style/Outline_Numbering.md` §1.2 requires.
 
 **Applies to.** Every project document, as `Style/Outline_Numbering.md` §0.2 defines the term.
 
@@ -56,7 +56,7 @@
 
 **Date.** 2026-09-28.
 
-**Policy.** The project keeps the history of its files in Git, a version-control program. Git records each saved set of changes as a commit. A remote repository is a copy of that history kept on another computer. To push is to send commits to the remote repository. The project's remote repository is on GitHub, a service that hosts Git repositories. As of 2026-09-28, the remote repository exists at git@github.com:devotpco/BrownOrg.git, named `origin`. The orchestrator added it and pushed the branches `master` and `dev_claude` to it on the Steward's go, on 2026-09-28. No AI on the project creates a remote repository or pushes to it without the Steward's go, because each is an action under P-1. The evening bookend carries the Steward's permission for its push; at the evening wrap-up, the orchestrator pushes `dev_claude` to `origin` without a separate go. Every other push needs the Steward's go under P-1. The GitHub repository `devotpco/BrownOrg` is private.
+**Policy.** The project keeps the history of its files in Git, a version-control program. Git records each saved set of changes as a commit. A remote repository is a copy of that history kept on another computer. To push is to send commits to the remote repository. The project's remote repository is on GitHub, a service that hosts Git repositories. As of 2026-09-28, the remote repository exists at git@github.com:devotpco/BrownOrg.git, named `origin`. The COB added it and pushed the branches `master` and `dev_claude` to it on the Steward's go, on 2026-09-28. No AI on the project creates a remote repository or pushes to it without the Steward's go, because each is an action under P-1. The evening bookend carries the Steward's permission for its push; at the evening wrap-up, the COB pushes `dev_claude` to `origin` without a separate go. Every other push needs the Steward's go under P-1. The GitHub repository `devotpco/BrownOrg` is private.
 
 **Origin.** The Steward, in conversation, 2026-09-28. The Steward wrote GH for GitHub:
 

@@ -36,13 +36,13 @@
 
 **Log entry 1.** 2026-09-27. Another AI, Grok, built the folder tree. Grok also wrote the project's documents itself, without dispatching each document's owner to write it.
 
-**Log entry 2.** 2026-09-28. The Steward ruled that Grok's documents be reverted. Reed, the janitor, deleted them. The owners then wrote them anew from the Library's notes. Tess wrote the eight READMEs, `0-AImemory/RULES.md` and this file. Paula wrote `Objective.md`, `0-AImemory/BINDER.md` and `9-Backlog/Parking_Lot/Parking_Lot.md`. The folder tree was kept. Reed also moved `main.py` from `2-APP/` back to the project root, copied `.gitignore` from the Library, and added the nine `.gitkeep` files. The orchestrator initialized git.
+**Log entry 2.** 2026-09-28. The Steward ruled that Grok's documents be reverted. Reed, the janitor, deleted them. The owners then wrote them anew from the Library's notes. Tess wrote the eight READMEs, `0-AImemory/RULES.md` and this file. Paula wrote `Objective.md`, `0-AImemory/BINDER.md` and `9-Backlog/Parking_Lot/Parking_Lot.md`. The folder tree was kept. Reed also moved `main.py` from `2-APP/` back to the project root, copied `.gitignore` from the Library, and added the nine `.gitkeep` files. The COB initialized git.
 
-**Log entry 3.** 2026-09-28. The Steward answered two questions the orchestrator had raised. The first asked when the Steward will state the project's objective; `Objective.md` records the answer. The second concerned the project's remote repository; the answer is P-4. Paula wrote the parking lot with no open question.
+**Log entry 3.** 2026-09-28. The Steward answered two questions the COB had raised. The first asked when the Steward will state the project's objective; `Objective.md` records the answer. The second concerned the project's remote repository; the answer is P-4. Paula wrote the parking lot with no open question.
 
 **Log entry 4.** 2026-09-28. The Steward ruled that branch `master` holds only a short README at the project root and `.gitignore`, and that all other work is on branch `dev_claude` (`0-AImemory/RULES.md` §5.8). Tess wrote the root `README.md`.
 
-**Log entry 5.** 2026-09-28. The Steward gave the GitHub repository address: git@github.com:devotpco/BrownOrg.git, named `origin`. The orchestrator added the remote, and pushed `master` and `dev_claude` to it.
+**Log entry 5.** 2026-09-28. The Steward gave the GitHub repository address: git@github.com:devotpco/BrownOrg.git, named `origin`. The COB added the remote, and pushed `master` and `dev_claude` to it.
 
 **Log entry 6.** 2026-09-28. Library changes, pushed to DEVLibrary: `Reference/CI_CD.md`; the curl exception in `Method/Cross_Functional_Team.md`; `Method/Agent_Optimization.md` (the agent-setup trial, with §5.7 on effort inheritance); `Reference/Layer_Encapsulation.md` (the Steward's layer rules, with §4.9); and a roster change: Bruno backend, Lena business logic, Finn frontend, Uma UX, Deacon deployment, Cyrus cloud; Marta and Ingrid widened; Vera retired.
 
@@ -66,7 +66,7 @@
 
 ## 5. Morning bookend
 
-**5.1** The orchestrator runs this checklist at the start of each working day, before any work. It adapts the morning bookend in `Method/Cross_Functional_Team.md`, under "The two bookends", to this project: there is no test runner yet. P-1 and P-2 govern each step.
+**5.1** The COB runs this checklist at the start of each working day, before any work. It adapts the morning bookend in `Method/Cross_Functional_Team.md`, under "The two bookends", to this project: there is no test runner yet. P-1 and P-2 govern each step.
 
 - **5.2** Confirm that the branch checked out is the branch for continuing work that §1 names.
 - **5.3** Fetch from `origin` and confirm that `dev_claude` is in sync with `origin/dev_claude`.
@@ -80,10 +80,12 @@
 **6.1** The team runs this checklist at the end of each working day. It adapts the evening bookend in `Method/Cross_Functional_Team.md`, under "The two bookends", to the same facts as §5.1. P-1 and P-2 govern each step.
 
 - **6.2** Hollis, the housekeeper, runs the test runner. There is no test runner yet: note that, and go on.
-- **6.3** Hollis lists every item that exists only in the conversation, and names an owner for each. For this one step Hollis inherits the conversation, under the exception that `Method/Cross_Functional_Team.md` states under "Terms".
-- **6.4** Each owner integrates its items into its own files. Each owner is a fresh agent, briefed from Hollis's report.
+- **6.3** The COB lists every item that exists only in the conversation, and names an owner for each. No agent inherits the conversation; every agent is fresh.
+- **6.4** Each owner integrates its items into its own files. Each owner is a fresh agent, briefed from the COB's list.
 - **6.5** Tess rewrites this file: §1, §3 and §4 afresh, and a new entry at the end of §2.
 - **6.6** Hollis verifies that every pointer resolves. A pointer is a reference from one file to another file or to a numbered block. It resolves when its target exists.
-- **6.7** The orchestrator commits on the branch for continuing work that §1 names, with the message "wrap-up" and the date. This is the wrap-up commit. The orchestrator then pushes `dev_claude` to `origin`; the evening bookend carries the Steward's permission for this push (P-4).
+- **6.7** The COB commits on the branch for continuing work that §1 names, with the message "wrap-up" and the date. This is the wrap-up commit. The COB then pushes `dev_claude` to `origin`; the evening bookend carries the Steward's permission for this push (P-4).
 
 **6.8** Once a test runner exists, the rule that ties each commit to its result applies. It is in `Method/Cross_Functional_Team.md`, under "Files the team keeps".
+
+**6.9** The COB also makes the sweep of §6.3 at the end of each stage of work, and before any restart of its session. The Steward ruled this on 2026-09-29.
